@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4476be2c-ef6f-4dce-9265-87c445157512" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/AdoptApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/AdoptApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/AdoptFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/AdoptFeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/AdoptRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/AdoptRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CircleBlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CircleBlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CircleCommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CircleCommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/CommunityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/PetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/AdoptApplicationVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/AdoptApplicationVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/AdoptRecordDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/AdoptRecordDetailVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/CUserRegisterVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/CUserRegisterVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/CommunityVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/CommunityVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/PetAddVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/PetAddVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/PetDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/PetDetailVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/PetListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/PetListVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/UserInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/pojo/vo/UserInfoVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/IAdoptApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/IAdoptApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/IBaseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/ICActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/ICActivityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/ICUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/ICUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/IPetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/IPetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/AdoptApplicationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/AdoptApplicationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/AdoptRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/AdoptRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/CUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/CUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/CommunityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/CommunityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/PetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/PetServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/superb/upetstar/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdoptApplicationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdoptApplicationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PetMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ReportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ReportMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SearchWordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SearchWordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Mybatis Mapper" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\server\apache-maven-3.5.2\repository" />
+        <option name="mavenHome" value="D:/server/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\server\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="27yRVhksYZ19ZBzQJKHjAAEhqc9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.superb.upetstar.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yimin\Desktop\upetstar-master(1)\upetstar\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.superb.upetstar.pojo.es" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UPetStarApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestES" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="upetstar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.superb.upetstar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.superb.upetstar" />
+      <option name="MAIN_CLASS_NAME" value="com.superb.upetstar.TestES" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestES.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="upetstar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.superb.upetstar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.superb.upetstar" />
+      <option name="MAIN_CLASS_NAME" value="com.superb.upetstar.TestES" />
+      <option name="METHOD_NAME" value="testCreate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestES.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="upetstar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.superb.upetstar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.superb.upetstar" />
+      <option name="MAIN_CLASS_NAME" value="com.superb.upetstar.TestES" />
+      <option name="METHOD_NAME" value="testDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestES.testMapping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="upetstar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.superb.upetstar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.superb.upetstar" />
+      <option name="MAIN_CLASS_NAME" value="com.superb.upetstar.TestES" />
+      <option name="METHOD_NAME" value="testMapping" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPetStarApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="upetstar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.superb.upetstar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.superb.upetstar.UPetStarApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.UPetStarApplication" />
+        <item itemvalue="JUnit.TestES.testDelete" />
+        <item itemvalue="JUnit.TestES.testCreate" />
+        <item itemvalue="JUnit.TestES" />
+        <item itemvalue="JUnit.TestES.testMapping" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4476be2c-ef6f-4dce-9265-87c445157512" name="Default Changelist" comment="" />
+      <created>1650290372261</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650290372261</updated>
+      <workItem from="1650290375790" duration="28000" />
+      <workItem from="1650290515736" duration="1426000" />
+      <workItem from="1650302359717" duration="295000" />
+      <workItem from="1650346299422" duration="796000" />
+      <workItem from="1650371512939" duration="380000" />
+      <workItem from="1650371911958" duration="2882000" />
+      <workItem from="1650428785056" duration="17022000" />
+      <workItem from="1650446571521" duration="159000" />
+      <workItem from="1650449956735" duration="375000" />
+      <workItem from="1650457241458" duration="15000" />
+      <workItem from="1650457391710" duration="266000" />
+      <workItem from="1650504387445" duration="146000" />
+      <workItem from="1650507834980" duration="701000" />
+      <workItem from="1650508584880" duration="628000" />
+      <workItem from="1650511596269" duration="1803000" />
+      <workItem from="1650517871486" duration="234000" />
+      <workItem from="1650529396451" duration="383000" />
+      <workItem from="1650529993199" duration="1325000" />
+      <workItem from="1650532234256" duration="14000" />
+      <workItem from="1650532877226" duration="271000" />
+      <workItem from="1650676132306" duration="487000" />
+      <workItem from="1650676888006" duration="134000" />
+      <workItem from="1650677276643" duration="9000" />
+      <workItem from="1650717063540" duration="822000" />
+      <workItem from="1650768693993" duration="3765000" />
+      <workItem from="1650775321095" duration="6542000" />
+      <workItem from="1650796501177" duration="112000" />
+      <workItem from="1650854302063" duration="4015000" />
+      <workItem from="1650881360894" duration="602000" />
+      <workItem from="1650882187368" duration="7154000" />
+      <workItem from="1650889671246" duration="978000" />
+      <workItem from="1650890714869" duration="1375000" />
+      <workItem from="1650893048677" duration="1101000" />
+      <workItem from="1650955312038" duration="5277000" />
+      <workItem from="1650960985641" duration="374000" />
+      <workItem from="1650961444352" duration="535000" />
+      <workItem from="1650962063594" duration="2427000" />
+      <workItem from="1650976309486" duration="591000" />
+      <workItem from="1650978017596" duration="4993000" />
+      <workItem from="1651066541471" duration="1953000" />
+      <workItem from="1651115422499" duration="4359000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat:新增通过用户id获取送养记录&#10;     新增通过用户id获取领养记录&#10;     新增通过领送养记录id获取领送养详细信息">
+      <created>1650291567109</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650291567109</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat:新增社区管理员注册/登录&#10;     新增通过用户id获取宠物的id和宠物名的列表&#10;     新增社区管理员获取本社区的活动列表">
+      <created>1650445860465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650445860467</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat:新增Redis缓存优化，读写分离">
+      <created>1651115684507</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651115684507</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="feat:新增通过用户id获取送养记录&#10;     新增通过用户id获取领养记录&#10;     新增通过领送养记录id获取领送养详细信息" />
+    <MESSAGE value="feat:新增社区管理员注册/登录&#10;     新增通过用户id获取宠物的id和宠物名的列表&#10;     新增社区管理员获取本社区的活动列表" />
+    <MESSAGE value="feat:新增Redis缓存优化，读写分离" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:新增Redis缓存优化，读写分离" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/superb/upetstar/utils/ConstantPropertiesUtils.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,58 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: upetstar
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+    lettuce:
+      pool:
+        max-wait: 2000ms
+        max-idle: 8
+        max-active: 2000
+        min-idle: 8
+  cache:
+    cache-names: petCache,userCache,adoptCache
+    type: redis
+  shardingsphere:
+    datasource:
+      names: master,slave0,slave1
+      # 主数据源
+      master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://192.168.52.1:17717/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: root
+      #  从数据源
+      slave0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://192.168.52.1:17718/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: root
+      # 从数据源
+      slave1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://192.168.52.1:17719/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: root
+    masterslave:
+      name: datasource # 数据源名称
+      master-data-source-name: master # 主库数据源
+      slave-data-source-names: slave0,slave1 # 从库数据源
+      load-balance-algorithm-type: ROUND_ROBIN # 从库负载策略
+    props:
+      sql:
+        show: true # 打印sql并显示执行库名称
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.superb.upetstar.pojo.entity
