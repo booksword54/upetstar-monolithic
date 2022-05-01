@@ -1,10 +1,28 @@
 server:
-  port: 8085
+  port: 8080
+  tomcat:
+    min-spare-threads: 100 # 最小备用线程数，tomcat启动时的初始化线程数
+    max-threads: 500 # Tomcat可创建的最大线程数，每一个线程处理一个请求，超过之后客户端请求排队 设置为CPU核心数的200-250倍
+    accept-count: 200 # 最大等待数，默认100
+    max-connections: 1000  # 最大连接数,默认10000，tomcat内tcp连接池的大小 一般这个值要大于(max-threads)+(accept-count)。
+    connection-timeout: 60000 # 最长等待时间 server端的socket超时间，单位ms，默认60s,
+    # server端判断client端没有读写并且超时时会close掉当前的socket
+    # client端设置keepAlive或者server端tcp状态为CLOSE_WAIT(比如client先close)，
+    # tomcat线程池
+    threads:
+      min-spare: 100 # 活跃线程数 核心池线程数，这些线程不会被销毁，会一直存在
+      max: 500 # 最大线程数
+    accesslog:
+      enabled: true
+
+
+#  public abstract ServerSocketChannel bind(SocketAddress local, int backlog) throws IOException; socket.listen(backlog)，
+#  也就是server在不能执行accept()之前，能监听的client的最大数量
 spring:
   application:
     name: upetstar
   redis:
-    host: 127.0.0.1
+    host: 124.220.184.87
     port: 6379
     timeout: 5000
     lettuce:
@@ -23,23 +41,23 @@ spring:
       master:
         type: com.zaxxer.hikari.HikariDataSource
         driver: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://192.168.52.1:17717/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        jdbc-url: jdbc:mysql://124.220.184.87:17717/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
-        password: root
+        password: 123456
       #  从数据源
       slave0:
         type: com.zaxxer.hikari.HikariDataSource
         driver: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://192.168.52.1:17718/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        jdbc-url: jdbc:mysql://124.220.184.87:17718/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
-        password: root
+        password: 123456
       # 从数据源
       slave1:
         type: com.zaxxer.hikari.HikariDataSource
         driver: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://192.168.52.1:17719/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        jdbc-url: jdbc:mysql://124.220.184.87:17719/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
-        password: root
+        password: 123456
     masterslave:
       name: datasource # 数据源名称
       master-data-source-name: master # 主库数据源
