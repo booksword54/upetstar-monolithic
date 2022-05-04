@@ -41,21 +41,21 @@ spring:
       master:
         type: com.zaxxer.hikari.HikariDataSource
         driver: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://124.220.184.87:17717/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        jdbc-url: jdbc:mysql://36.133.74.179:17717/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
         password: 123456
       #  从数据源
       slave0:
         type: com.zaxxer.hikari.HikariDataSource
         driver: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://124.220.184.87:17718/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        jdbc-url: jdbc:mysql://36.133.74.179:17718/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
         password: 123456
       # 从数据源
       slave1:
         type: com.zaxxer.hikari.HikariDataSource
         driver: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://124.220.184.87:17719/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        jdbc-url: jdbc:mysql://36.133.74.179:17719/upetstar?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
         password: 123456
     masterslave:

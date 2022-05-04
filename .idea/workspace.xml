@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4476be2c-ef6f-4dce-9265-87c445157512" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +233,9 @@
       <workItem from="1651284189056" duration="6248000" />
       <workItem from="1651319705664" duration="6214000" />
       <workItem from="1651385742197" duration="1357000" />
+      <workItem from="1651412682055" duration="915000" />
+      <workItem from="1651653342543" duration="36000" />
+      <workItem from="1651678082051" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="feat:新增通过用户id获取送养记录&#10;     新增通过用户id获取领养记录&#10;     新增通过领送养记录id获取领送养详细信息">
       <created>1650291567109</created>
