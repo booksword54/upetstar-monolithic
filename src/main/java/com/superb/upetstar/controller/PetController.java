@@ -115,5 +115,4 @@ public class PetController {
         return removeByIds ? Result.success() : Result.fail();
     }
 
-
 }

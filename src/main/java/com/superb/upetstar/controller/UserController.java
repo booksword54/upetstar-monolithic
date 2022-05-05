@@ -136,8 +136,8 @@ public class UserController {
     @Cacheable(value = "userCache", keyGenerator = "keyGenerator")
     @GetMapping("/getApplyList")
     public Result getApplyList(@RequestParam Integer uid) {
-        List<AdoptApplication> adoptRecordVOS = userService.getApplyList(uid);
-        return Result.success().data("adoptRecordVOS", adoptRecordVOS);
+        List<AdoptApplication> adoptApplications = userService.getApplyList(uid);
+        return Result.success().data("adoptApplications", adoptApplications);
     }
 
     @ApiOperation("同意领养宠物")

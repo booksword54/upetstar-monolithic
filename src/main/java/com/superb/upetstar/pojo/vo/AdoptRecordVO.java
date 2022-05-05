@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,7 +14,9 @@ import java.util.Date;
  */
 @Data
 @ApiModel("领送养记录视图对象")
-public class AdoptRecordVO {
+public class AdoptRecordVO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Integer adoptRecordId; // 领养记录id
     private String title; // 标题
     private String description; // 描述

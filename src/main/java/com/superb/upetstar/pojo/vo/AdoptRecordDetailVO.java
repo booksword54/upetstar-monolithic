@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,7 +14,9 @@ import java.util.Date;
  */
 @Data
 @ApiModel("送养记录详情视图对象")
-public class AdoptRecordDetailVO {
+public class AdoptRecordDetailVO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Integer adoptRecordId;
     private String avatarUrl; // 头像url
     private String username; // 用户姓名

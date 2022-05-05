@@ -108,13 +108,6 @@ public class AdoptRecordController {
         return audit > 0 ? Result.success() : Result.fail();
     }
 
-    @ApiOperation("领养")
-    @GetMapping("/adopt")
-    public Result adopt(@RequestParam Integer id, @RequestParam Integer aId) {
-        Integer adopt = adoptRecordService.adopt(id, aId);
-        return adopt > 0 ? Result.success() : Result.fail();
-    }
-
     /**
      * 删除
      */
