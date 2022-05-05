@@ -2,11 +2,14 @@ package com.superb.upetstar.pojo.response;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class Result {
+public class Result implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Integer code; //业务响应码
     private String message; //返回消息
     private Map<String, Object> data = new HashMap<>(); //返回数据
