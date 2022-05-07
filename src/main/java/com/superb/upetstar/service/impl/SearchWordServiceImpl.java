@@ -16,7 +16,6 @@ import com.superb.upetstar.service.IPetService;
 import com.superb.upetstar.service.ISearchWordService;
 import com.superb.upetstar.utils.SearchRedisHelper;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,14 +60,18 @@ public class SearchWordServiceImpl extends ServiceImpl<SearchWordMapper, SearchW
                     AdoptRecordVO adoptRecordVO = new AdoptRecordVO();
                     // 封装送养记录相关信息
                     adoptRecordVO.setAdoptRecordId(esAdoptRecord.getId());
-                    BeanUtils.copyProperties(esAdoptRecord, adoptRecordVO);
+                    adoptRecordVO.setTitle(esAdoptRecord.getTitle());
+                    adoptRecordVO.setDescription(esAdoptRecord.getDescription());
+                    adoptRecordVO.setGiveTime(esAdoptRecord.getGiveTime());
                     // 封装宠物相关信息
-                    BeanUtils.copyProperties(pet, adoptRecordVO);
+                    adoptRecordVO.setBreed(pet.getBreed());
+                    adoptRecordVO.setAddress(pet.getAddress());
                     if (pet.getImages() != null) {
                         adoptRecordVO.setImage(StringUtils.split(pet.getImages(), ",")[0]);
                     }
                     return adoptRecordVO;
                 }).collect(Collectors.toList());
+
         // 关键字[地址，名字]查询宠物信息
         List<ESPet> esPets = petRepository.findByAddressOrBreed(word, word);
         // 根据宠物信息查询对应送养记录信息，合并成视图对象流
@@ -81,9 +84,15 @@ public class SearchWordServiceImpl extends ServiceImpl<SearchWordMapper, SearchW
             // 封装进视图对象
             for (AdoptRecord adoptRecord : adoptRecords) {
                 AdoptRecordVO adoptRecordVO = new AdoptRecordVO();
+                // 封装送养记录id
                 adoptRecordVO.setAdoptRecordId(adoptRecord.getId());
-                BeanUtils.copyProperties(adoptRecord, adoptRecordVO);
-                BeanUtils.copyProperties(esPet, adoptRecordVO);
+                adoptRecordVO.setTitle(adoptRecord.getTitle());
+                adoptRecordVO.setDescription(adoptRecord.getDescription());
+                adoptRecordVO.setGiveTime(adoptRecord.getGiveTime());
+                // 封装宠物信息
+                adoptRecordVO.setImage(esPet.getImage());
+                adoptRecordVO.setBreed(esPet.getBreed());
+                adoptRecordVO.setAddress(esPet.getAddress());
                 adoptRecordVOS.add(adoptRecordVO);
             }
         }).close();
