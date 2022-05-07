@@ -20,9 +20,11 @@ public class AdoptRecordVO implements Serializable {
     private Integer adoptRecordId; // 领养记录id
     private String title; // 标题
     private String description; // 描述
-    private String address; // 宠物地址
-    private String image; // 宠物的第一张图
-    private String breed; // 宠物种类
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date giveTime; // 送养（领养）时间
+
+    private String breed; // 宠物种类
+    private String address; // 宠物地址
+    private String image; // 宠物的第一张图
+
 }

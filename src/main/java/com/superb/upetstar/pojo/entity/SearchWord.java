@@ -7,13 +7,12 @@ import lombok.experimental.Accessors;
 
 /**
  * @author hym
- * @description
+ * @description 搜索信息
  */
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @TableName("search_word")
 public class SearchWord extends BaseEntity {
-    private String word;
-    private Integer number;
+    private String word; // 关键词
 }

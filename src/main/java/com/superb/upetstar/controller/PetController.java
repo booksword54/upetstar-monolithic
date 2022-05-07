@@ -4,6 +4,7 @@ package com.superb.upetstar.controller;
 import com.superb.upetstar.pojo.entity.Pet;
 import com.superb.upetstar.pojo.response.Result;
 import com.superb.upetstar.pojo.vo.PetListVO;
+import com.superb.upetstar.repository.PetRepository;
 import com.superb.upetstar.service.IPetService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +34,9 @@ public class PetController {
     @Autowired
     private IPetService petService;
 
+    @Autowired
+    private PetRepository petRepository;
+
     /**
      * 列表
      */
@@ -55,8 +59,9 @@ public class PetController {
     @CachePut(value = "petCache", condition = "#result.code=200", keyGenerator = "keyGenerator")
     @PostMapping("/save")
     public Result save(@RequestBody Pet pet) {
-        boolean save = petService.save(pet);
-        return save ? Result.success() : Result.fail();
+        petService.save(pet);
+        petRepository.save(pet.buildESPet()); // 新增文档
+        return Result.success();
     }
 
     /**
@@ -91,8 +96,9 @@ public class PetController {
     @PostMapping("/update")
     @CachePut(value = "petCache", condition = "#result.code=200", keyGenerator = "keyGenerator")
     public Result update(@RequestBody Pet pet) {
-        boolean b = petService.updateById(pet);
-        return b ? Result.success() : Result.fail();
+        petService.updateById(pet);
+        petRepository.save(pet.buildESPet()); // 更新文档
+        return Result.success();
     }
 
     /**
@@ -101,8 +107,9 @@ public class PetController {
     @DeleteMapping("/delete/{id}")
     @CacheEvict(value = "petCache", beforeInvocation = true, condition = "#result.code=200", keyGenerator = "keyGenerator")
     public Result delete(@PathVariable("id") Integer id) {
-        boolean removeById = petService.removeById(id);
-        return removeById ? Result.success() : Result.fail();
+        petService.removeById(id);
+        petRepository.deleteById(id);// 删除文档
+        return Result.success();
     }
 
     /**
@@ -111,8 +118,11 @@ public class PetController {
     @DeleteMapping("/deleteBatch")
     @CacheEvict(value = "petCache", beforeInvocation = true, condition = "#result.code=200", keyGenerator = "keyGenerator")
     public Result deleteBatch(@RequestBody Integer[] ids) {
-        boolean removeByIds = petService.removeByIds(Arrays.asList(ids));
-        return removeByIds ? Result.success() : Result.fail();
+        petService.removeByIds(Arrays.asList(ids));
+        for (Integer id : ids) {
+            petRepository.deleteById(id); // 删除文档
+        }
+        return Result.success();
     }
 
 }

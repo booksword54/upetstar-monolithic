@@ -2,9 +2,11 @@ package com.superb.upetstar.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.superb.upetstar.pojo.es.ESAdoptRecord;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.beans.BeanUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -30,4 +32,13 @@ public class AdoptRecord extends BaseEntity {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date giveTime; // 送养时间
     private Integer auditStatus; // 审核状态 0未审核 1未通过 2已通过
+
+    /**
+     * 转换为对应文档对象
+     */
+    public ESAdoptRecord buildESAdoptRecord() {
+        ESAdoptRecord esAdoptRecord = new ESAdoptRecord();
+        BeanUtils.copyProperties(this, esAdoptRecord);
+        return esAdoptRecord;
+    }
 }

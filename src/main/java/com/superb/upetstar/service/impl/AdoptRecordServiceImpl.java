@@ -8,13 +8,18 @@ import com.superb.upetstar.pojo.entity.AdoptRecord;
 import com.superb.upetstar.pojo.entity.AdoptRecord;
 import com.superb.upetstar.pojo.entity.Pet;
 import com.superb.upetstar.pojo.entity.User;
+import com.superb.upetstar.pojo.es.ESAdoptRecord;
+import com.superb.upetstar.pojo.es.ESPet;
 import com.superb.upetstar.pojo.vo.AdoptRecordDetailVO;
 import com.superb.upetstar.pojo.vo.AdoptRecordVO;
+import com.superb.upetstar.repository.AdoptRecordRepository;
+import com.superb.upetstar.repository.PetRepository;
 import com.superb.upetstar.service.IAdoptRecordService;
 import com.superb.upetstar.service.IPetService;
 import com.superb.upetstar.service.ISearchWordService;
 import com.superb.upetstar.service.IUserService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,9 +45,6 @@ public class AdoptRecordServiceImpl extends ServiceImpl<AdoptRecordMapper, Adopt
 
     @Resource
     private IUserService userService;
-
-    @Resource
-    private ISearchWordService searchWordService;
 
     @Override
     public Integer adopt(Integer id, Integer aId) {
@@ -99,56 +101,14 @@ public class AdoptRecordServiceImpl extends ServiceImpl<AdoptRecordMapper, Adopt
         return getAdoptRecordDetail(id);
     }
 
-    /**
-     * adoptRecord转换为adoptRecordVO
-     *
-     * @param adoptRecord
-     * @return adoptRecordVO
-     */
-    public AdoptRecordVO toVo(AdoptRecord adoptRecord) {
+    @Override
+    public ESAdoptRecord buildESAdoptRecord(AdoptRecord adoptRecord) {
         if (adoptRecord == null) {
             return null;
         }
-        AdoptRecordVO adoptRecordVO = new AdoptRecordVO();
-        adoptRecordVO.setAdoptRecordId(adoptRecord.getId());
-        adoptRecord.setTitle(adoptRecord.getTitle());
-        adoptRecord.setDescription(adoptRecord.getDescription());
-        adoptRecord.setGiveTime(adoptRecord.getGiveTime());
-        Integer petId = adoptRecord.getPetId();
-        Pet pet = petService.getById(petId);
-        if (pet != null) {
-            String address = pet.getAddress();
-            String breed = pet.getBreed();
-            String images = pet.getImages();
-            String firstImg = StringUtils.split(images, ",")[0];
-            adoptRecordVO.setAddress(address);
-            adoptRecordVO.setBreed(breed);
-            adoptRecordVO.setImage(firstImg);
-        }
-        return adoptRecordVO;
-    }
-
-    @Override
-    public List<AdoptRecordVO> search(String word) {
-        List<AdoptRecord> adoptRecords = null;
-        if (StringUtils.isEmpty(word)) { // 关键字为空，查询所有领养信息
-            adoptRecords = baseMapper.selectList(null);
-            return adoptRecords.stream().map(this::toVo).collect(Collectors.toList());
-        }
-        // 更新关键字记录【统计热门数据】
-        searchWordService.updateByWord(word);
-        // 根据关键词查询宠物id列表
-        List<Integer> petIds = petService.searchPetIds(word);
-        adoptRecords = new ArrayList<>();
-        // 查询数据库记录集合
-        for (Integer petId : petIds) {
-            QueryWrapper<AdoptRecord> adoptRecordQueryWrapper = new QueryWrapper<>();
-            adoptRecordQueryWrapper.eq("pet_id", petId).or().like("title", word); // word可能是标题的模糊查询
-            List<AdoptRecord> records = baseMapper.selectList(adoptRecordQueryWrapper); // 根据宠物id或领养标题模糊查询领养记录
-            adoptRecords.addAll(records);
-        }
-        // 转换为记录视图集合
-        return adoptRecords.stream().map(this::toVo).collect(Collectors.toList());
+        ESAdoptRecord esAdoptRecord = new ESAdoptRecord();
+        BeanUtils.copyProperties(adoptRecord, esAdoptRecord);
+        return esAdoptRecord;
     }
 
 }

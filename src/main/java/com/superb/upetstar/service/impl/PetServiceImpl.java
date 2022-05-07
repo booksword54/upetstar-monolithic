@@ -8,6 +8,7 @@ import com.superb.upetstar.pojo.entity.AdoptApplication;
 import com.superb.upetstar.pojo.entity.AdoptRecord;
 import com.superb.upetstar.pojo.entity.Community;
 import com.superb.upetstar.pojo.entity.Pet;
+import com.superb.upetstar.pojo.es.ESPet;
 import com.superb.upetstar.pojo.vo.PetDetailVO;
 import com.superb.upetstar.pojo.vo.PetListVO;
 import com.superb.upetstar.service.IAdoptRecordService;
@@ -75,11 +76,25 @@ public class PetServiceImpl extends ServiceImpl<PetMapper, Pet> implements IPetS
 
     @Override
     public List<Integer> searchPetIds(String word) {
-        QueryWrapper<Pet> petQueryWrapper = new QueryWrapper<>();
-        if (!StringUtils.isEmpty(word)) {
-            petQueryWrapper.like("breed", "%" + word + "%").or().like("name", "%" + word + "%");
+        if (StringUtils.isEmpty(word)) {
+            return new ArrayList<>();
         }
+        QueryWrapper<Pet> petQueryWrapper = new QueryWrapper<>();
+        petQueryWrapper.like("breed", "%" + word + "%").or().like("name", "%" + word + "%");
         return baseMapper.selectList(petQueryWrapper).stream().map(Pet::getId).collect(Collectors.toList());
+    }
+
+    @Override
+    public ESPet buildESPet(Pet pet) {
+        if (pet == null) {
+            return null;
+        }
+        ESPet esPet = new ESPet();
+        BeanUtils.copyProperties(pet, esPet);
+        if (!StringUtils.isEmpty(pet.getImages())) {
+            esPet.setImage(StringUtils.split(pet.getImages(), ",")[0]);
+        }
+        return esPet;
     }
 
     @Override

@@ -132,7 +132,9 @@
                     </execution>
                     <execution>
                         <id>verify</id>
-                        <goals><goal>verify</goal></goals>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

@@ -3,6 +3,7 @@ package com.superb.upetstar.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.superb.upetstar.pojo.entity.AdoptApplication;
 import com.superb.upetstar.pojo.entity.Pet;
+import com.superb.upetstar.pojo.es.ESPet;
 import com.superb.upetstar.pojo.vo.PetDetailVO;
 import com.superb.upetstar.pojo.vo.PetListVO;
 
@@ -67,4 +68,11 @@ public interface IPetService extends IService<Pet> {
      */
     List<Integer> searchPetIds(String word);
 
+    /**
+     * 实体对象转换为索引对象
+     *
+     * @param pet
+     * @return
+     */
+    ESPet buildESPet(Pet pet);
 }

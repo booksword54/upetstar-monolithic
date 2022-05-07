@@ -15,16 +15,18 @@ server:
     accesslog:
       enabled: true
 
-
 #  public abstract ServerSocketChannel bind(SocketAddress local, int backlog) throws IOException; socket.listen(backlog)，
 #  也就是server在不能执行accept()之前，能监听的client的最大数量
 spring:
+  elasticsearch:
+    rest:
+      uris: 36.133.74.179:9200
   application:
     name: upetstar
   redis:
     host: 124.220.184.87
     port: 6379
-    timeout: 5000
+    timeout: 5000ms
     lettuce:
       pool:
         max-wait: 2000ms

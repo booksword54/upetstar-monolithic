@@ -2,6 +2,7 @@ package com.superb.upetstar.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.superb.upetstar.pojo.entity.AdoptRecord;
+import com.superb.upetstar.pojo.es.ESAdoptRecord;
 import com.superb.upetstar.pojo.vo.AdoptRecordDetailVO;
 import com.superb.upetstar.pojo.vo.AdoptRecordVO;
 
@@ -62,11 +63,10 @@ public interface IAdoptRecordService extends IService<AdoptRecord> {
     AdoptRecordDetailVO getGiveRecordDetail(Integer id);
 
     /**
-     * 关键字搜索
+     * 实体对象转换为索引对象
      *
-     * @param word 关键字 宠物名、类别
+     * @param adoptRecord
      * @return
      */
-    List<AdoptRecordVO> search(String word);
-
+    ESAdoptRecord buildESAdoptRecord(AdoptRecord adoptRecord);
 }

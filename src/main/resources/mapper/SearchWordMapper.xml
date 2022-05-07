@@ -3,7 +3,6 @@
 <mapper namespace="com.superb.upetstar.mapper.SearchWordMapper">
     <resultMap id="searchWordMap" type="searchWord">
         <id property="id" column="id"/>
-        <result property="number" column="number"/>
         <result property="word" column="word"/>
         <result property="updateTime" column="update_time"/>
         <result property="createTime" column="create_time"/>

@@ -22,7 +22,7 @@ public class AdoptRecordDetailVO implements Serializable {
     private String username; // 用户姓名
     private String[] images; // 宠物图片路径数组
     private Integer age; // 宠物年龄
-    private String gender; // 用户性别
+    private String gender; // 宠物性别
     private String breed; // 宠物种类
     private String ster; // 宠物绝育状态
     private String vac; // 宠物疫苗认证

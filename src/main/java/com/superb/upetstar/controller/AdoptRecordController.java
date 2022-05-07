@@ -1,11 +1,12 @@
 package com.superb.upetstar.controller;
 
-
 import com.superb.upetstar.pojo.entity.AdoptRecord;
 import com.superb.upetstar.pojo.response.Result;
 import com.superb.upetstar.pojo.vo.AdoptRecordDetailVO;
 import com.superb.upetstar.pojo.vo.AdoptRecordVO;
+import com.superb.upetstar.repository.AdoptRecordRepository;
 import com.superb.upetstar.service.IAdoptRecordService;
+import com.superb.upetstar.service.ISearchWordService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -34,6 +35,12 @@ public class AdoptRecordController {
     @Autowired
     private IAdoptRecordService adoptRecordService;
 
+    @Autowired
+    private AdoptRecordRepository adoptRecordRepository;
+
+    @Autowired
+    private ISearchWordService searchWordService;
+
     /**
      * 列表
      */
@@ -59,8 +66,9 @@ public class AdoptRecordController {
     @CachePut(value = "adoptCache", condition = "#result.code==200", keyGenerator = "keyGenerator")
     @PostMapping("/save")
     public Result save(@RequestBody AdoptRecord adoptRecord) {
-        boolean save = adoptRecordService.save(adoptRecord);
-        return save ? Result.success() : Result.fail();
+        adoptRecordService.save(adoptRecord);
+        adoptRecordRepository.save(adoptRecord.buildESAdoptRecord());  // 新增文档
+        return Result.success();
     }
 
     /**
@@ -97,8 +105,9 @@ public class AdoptRecordController {
     @CachePut(value = "adoptCache", condition = "#result.code==200", keyGenerator = "keyGenerator")
     @PutMapping("/update")
     public Result update(@ApiParam("上传领养记录") @RequestBody AdoptRecord adoptRecord) {
-        boolean b = adoptRecordService.updateById(adoptRecord);
-        return b ? Result.success() : Result.fail();
+        adoptRecordService.updateById(adoptRecord);
+        adoptRecordRepository.save(adoptRecord.buildESAdoptRecord()); // 更新文档
+        return Result.success();
     }
 
     @ApiOperation("领养审核")
@@ -115,8 +124,9 @@ public class AdoptRecordController {
     @CacheEvict(value = "adoptCache", condition = "#result.code==200", beforeInvocation = true, keyGenerator = "keyGenerator")
     @DeleteMapping("/delete/{id}")
     public Result delete(@ApiParam("删除领养记录id") @PathVariable("id") Integer id) {
-        boolean removeById = adoptRecordService.removeById(id);
-        return removeById ? Result.success() : Result.fail();
+        adoptRecordService.removeById(id);
+        adoptRecordRepository.deleteById(id);// 删除文档
+        return Result.success();
     }
 
     /**
@@ -126,8 +136,11 @@ public class AdoptRecordController {
     @CacheEvict(value = "adoptCache", condition = "#result.code==200", beforeInvocation = true, keyGenerator = "keyGenerator")
     @DeleteMapping("/deleteBatch")
     public Result deleteBatch(@ApiParam("批量删除id") @RequestBody Integer[] ids) {
-        boolean removeByIds = adoptRecordService.removeByIds(Arrays.asList(ids));
-        return removeByIds ? Result.success() : Result.fail();
+        adoptRecordService.removeByIds(Arrays.asList(ids));
+        for (Integer id : ids) {
+            adoptRecordRepository.deleteById(id); // 删除文档
+        }
+        return Result.success();
     }
 
 
@@ -135,9 +148,8 @@ public class AdoptRecordController {
     @Cacheable(value = "adoptCache", keyGenerator = "keyGenerator")
     @GetMapping("/search")
     public Result search(@RequestParam String word) {
-        List<AdoptRecordVO> adoptRecordVOS = adoptRecordService.search(word);
+        List<AdoptRecordVO> adoptRecordVOS = searchWordService.search(word);
         return Result.success().data("adoptRecordVOS", adoptRecordVOS);
     }
-
 
 }
