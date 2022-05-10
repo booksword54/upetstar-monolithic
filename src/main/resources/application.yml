@@ -24,7 +24,7 @@ spring:
   application:
     name: upetstar
   redis:
-    host: 124.220.184.87
+    host: 10.0.4.5
     port: 6379
     timeout: 5000ms
     lettuce:
